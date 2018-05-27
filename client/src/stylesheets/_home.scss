@@ -1,0 +1,12 @@
+.splash-img {
+  @media only screen and (min-width: 601px) {
+    height:420px;
+    background-image: url('../assets/images/home-splash-large.png');
+    background-size: cover;
+    background-position: center center;
+  }
+  height:310px;
+  background-image: url('../assets/images/home-splash-small.png');
+  background-size: cover;
+  background-position: center center;
+}

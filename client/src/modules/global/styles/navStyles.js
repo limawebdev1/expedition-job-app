@@ -6,7 +6,7 @@ const toolbarStyles = {
 const titleStyles = {
   color: 'white',
   fontFamily: 'Montserrat',
-  fontSize: '18px'
+  fontSize: '17px'
 }
 
 
