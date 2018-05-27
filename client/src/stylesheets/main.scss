@@ -1,0 +1,17 @@
+html,
+body {
+  height: 100%;
+  font-family: 'Montserrat';
+  color: #363434;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+div {
+  margin: 0px;
+  padding: 0px;
+  @import './all';
+}

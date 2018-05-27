@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+  font-family: 'Montserrat';
+  color: #363434;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+div {
+  margin: 0px;
+  padding: 0px; }
+  div .nav {
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    width: 100%; }
+    div .nav img.nav-logo {
+      margin-left: 20px;
+      width: auto;
+      position: relative;
+      top: 4px;
+      max-height: 40px; }
