@@ -1,5 +1,5 @@
 const toolbarStyles = {
-  backgroundColor: '#504F4F',
+  backgroundColor: '#191616',
   color: 'white',
 };
 

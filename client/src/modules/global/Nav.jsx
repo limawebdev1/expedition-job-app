@@ -17,7 +17,7 @@ export default class Nav extends Component {
             <Link to='/'><img alt="hvac company logo" className="nav-logo" src={hvacLogo} /></Link>
           </ToolbarGroup>
           <ToolbarGroup>
-            <Link to="/"><ToolbarTitle style={titleStyles} text="Apply Now" /></Link>
+            <Link to="/apply"><ToolbarTitle style={titleStyles} text="Apply Now" /></Link>
           </ToolbarGroup>
         </Toolbar>
       </div>

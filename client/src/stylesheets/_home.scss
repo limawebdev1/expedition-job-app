@@ -10,3 +10,49 @@
   background-size: cover;
   background-position: center center;
 }
+
+.job-info {
+  width: 93%;
+  margin: auto;
+  h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .job-body {
+    margin: 0px;
+    padding: 0px;
+    padding-right: 2.5%;
+    .row {
+      .col {
+        margin: 0px;
+        ul {
+          li {
+            list-style-type: circle;
+            margin-left: 7.5%;
+          }
+        }
+      }
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+  .experience {
+    padding-left: 2.5%;
+    ul {
+      li {
+        list-style-type: circle;
+        margin-left: 7.5%;
+      }
+    }
+    .key-experience-list {
+      margin-bottom: 30px;
+    }
+    .relevant-experience-list {
+      margin-bottom: 30px;
+    }
+    a {
+      font-size: 18px;
+    }
+  }
+}
