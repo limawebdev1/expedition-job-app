@@ -34,7 +34,7 @@ div {
     padding: 0px; }
 
 .home {
-  padding-bottom: 60px; }
+  padding-bottom: 40px; }
   .home .splash-img {
     height: 310px;
     background-image: url("../assets/images/home-splash-small.png");
@@ -74,3 +74,31 @@ div {
         margin-bottom: 30px; }
       .home .job-info .experience a {
         font-size: 18px; }
+
+.apply {
+  height: 100vh;
+  width: 100%;
+  color: white;
+  background-image: url("../assets/images/apply-splash-small.png");
+  background-size: cover;
+  background-position: center center; }
+  .apply .row {
+    height: 100%; }
+    .apply .row .s12 p {
+      margin-bottom: 30px; }
+    .apply .row .s12 button {
+      border: 1px solid white;
+      border-radius: 5pt;
+      background-color: rgba(216, 216, 216, 0.16);
+      color: white;
+      font-family: Montserrat;
+      padding: 15px 20px 15px 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+      width: 130px;
+      cursor: pointer; }
+  @media only screen and (min-width: 601px) {
+    .apply {
+      background-image: url("../assets/images/apply-splash-large.png");
+      background-size: cover;
+      background-position: center center; } }

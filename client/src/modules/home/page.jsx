@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import Nav from '../global/Nav';
+
 const job = {
   title: 'HVAC Tech',
-  description: 'We are looking for reliable, professional, motivated and hard working people. Candidates must be looking for a career with a stable HVACR company.We are a family oriented business providing HVAC and Refrigeration services since 1975. We install and service all types of heating, refrigeration and air conditioning equipment.',
+  description: 'We are looking for reliable, professional, motivated and hard working people. Candidates must be looking for a career with a stable HVACR company. We are a family oriented business providing HVAC and Refrigeration services since 1975. We install and service all types of heating, refrigeration and air conditioning equipment.',
   qualifications: ['Motivated individual', 'Must be well groomed and have a neat appearance', 'Friendly and personable', 'Valid drivers license & a clean driving record', 'Must agree to a background check and drug test', 'If an apprentice must be enrolled in school to forward your career' ],
   benefits: ['Competitive wages', 'Paid vacations and 9 holidays', 'Medical, dental benefits', 'Short Term/Long Term Disability and others available', '401(k) Plan with available company match', 'Great working environment'], 
   key_experience: ['HVAC', 'Mechanical', 'Overall years of work experience'],
   relevant_experience: ['Overall work experience', 'HVAC', 'Refrigeration', 'Mechanical']
-}
+};
+
 class Home extends Component {
   constructor(){
     super();
