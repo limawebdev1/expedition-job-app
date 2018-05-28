@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { signinUser } from './actions';
+import { signinUser, signupUser } from './actions';
 import SigninForm from './components/SigninForm';
+import SignupForm from './components/SignupForm';
 
 class Apply extends Component {
   constructor(){
@@ -34,19 +35,12 @@ class Apply extends Component {
     </div>);
   }
 
-  renderSignin = () => {
-    return (<div className="col s12 valign center-align">
-      <h1>Start Your Expedition</h1>
-      
-    </div>);
-  }
-
   renderView = () => {
-    const signinUser = this.props.signinUser;
+    const { signinUser, signupUser } = this.props;
     switch(this.state.view){
       case 'apply': return this.renderApply(); break;
-      case 'signin' : return <SigninForm onSubmit={signinUser} things={'hello'}/>; break;
-      case 'signup': return this.renderSignup(); break;
+      case 'signin' : return <SigninForm onSubmit={signinUser} />; break;
+      case 'signup': return <SignupForm onSubmit={signupUser} />; break;
     }
   }
 
@@ -60,7 +54,7 @@ class Apply extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ signinUser }, dispatch);
+  return bindActionCreators({ signinUser, signupUser }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(Apply);

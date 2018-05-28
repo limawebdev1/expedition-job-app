@@ -4,6 +4,21 @@
     p {
       margin-bottom: 30px;
     }
+    form {
+      width: 300px;
+      margin: auto;
+      label{
+        color:white;
+      }
+      input{
+        color:white;
+        font-family: Montserrat;
+      }
+      button {
+        margin: auto;
+        width:100%;
+      }
+    }
     button {
       border: 1px solid white;
       border-radius: 5pt;

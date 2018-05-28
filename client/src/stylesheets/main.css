@@ -86,6 +86,17 @@ div {
     height: 100%; }
     .apply .row .s12 p {
       margin-bottom: 30px; }
+    .apply .row .s12 form {
+      width: 300px;
+      margin: auto; }
+      .apply .row .s12 form label {
+        color: white; }
+      .apply .row .s12 form input {
+        color: white;
+        font-family: Montserrat; }
+      .apply .row .s12 form button {
+        margin: auto;
+        width: 100%; }
     .apply .row .s12 button {
       border: 1px solid white;
       border-radius: 5pt;

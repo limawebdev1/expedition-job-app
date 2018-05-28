@@ -7,7 +7,7 @@ class SigninForm extends Component {
   }
   render() {
     return (
-      <div className="col s12 valign">
+      <div className="col s12 valign signin">
         <h1 className="center-align">Start Your Expedition</h1>
         <p className="center-align">Enter your email and password to sign in.</p>
         <form onSubmit={this.props.handleSubmit(this.props.onSubmit)}>
