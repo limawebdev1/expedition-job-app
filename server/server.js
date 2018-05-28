@@ -8,11 +8,14 @@ const app = express();
 const environment = process.env.NODE_ENV;
 
 // Routes
+const authRoutes = require('./routes/authentication');
 
 app.use(cors());
 app.use(bodyParser.json({
   type: '*/*'
 }));
+
+app.use('/api', authRoutes);
 
 // Interal server error handler
 app.use(function (err, req, res) {
