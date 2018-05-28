@@ -3,13 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "db-start": "dropdb expedition-app-dev; createdb expedition-app-dev; knex migrate:latest; knex seed:run;"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
     "express": "~4.15.5",
-    "morgan": "~1.9.0"
+    "knex": "^0.14.6",
+    "morgan": "~1.9.0",
+    "pg": "^7.4.3"
   }
 }
