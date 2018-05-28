@@ -7,12 +7,15 @@
     "db-start": "dropdb expedition-app-dev; createdb expedition-app-dev; knex migrate:latest; knex seed:run;"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "~1.18.2",
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
     "express": "~4.15.5",
     "knex": "^0.14.6",
+    "lodash": "^4.17.10",
     "morgan": "~1.9.0",
-    "pg": "^7.4.3"
+    "pg": "^7.4.3",
+    "uuid": "^3.2.1"
   }
 }
