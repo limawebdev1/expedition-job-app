@@ -1,19 +1,66 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { signinUser } from './actions';
+import SigninForm from './components/SigninForm';
 
 class Apply extends Component {
+  constructor(){
+    super();
+    this.state = {
+      view: 'apply'
+    }
+  }
+
+  showSignup = () => {
+    this.setState({
+      view: 'signup'
+    });
+  }
+
+  showSignin = () => {
+    this.setState({
+      view: 'signin'
+    });
+  }
+
+  renderApply = () => {
+    return (<div className="col s12 valign center-align">
+      <h1>Start Your Expedition</h1>
+      <p>Sign up or sign in to start applying to jobs!</p>
+      <button onClick={this.showSignup}>Sign Up</button>
+      <button onClick={this.showSignin}>Sign In</button>
+    </div>);
+  }
+
+  renderSignin = () => {
+    return (<div className="col s12 valign center-align">
+      <h1>Start Your Expedition</h1>
+      
+    </div>);
+  }
+
+  renderView = () => {
+    const signinUser = this.props.signinUser;
+    switch(this.state.view){
+      case 'apply': return this.renderApply(); break;
+      case 'signin' : return <SigninForm onSubmit={signinUser} things={'hello'}/>; break;
+      case 'signup': return this.renderSignup(); break;
+    }
+  }
+
   render() {
     return <div className="apply">
       <div className="row valign-wrapper">
-        <div className="col s12 valign center-align">
-          <h1>Start Your Expedition</h1>
-          <p>Sign up or sign in to start applying to jobs!</p>
-          <Link to='/signup'><button>Sign Up</button></Link>
-          <Link to='/signin'><button>Sign In</button></Link>
-        </div>
+        {this.renderView()}
       </div>
     </div>;
   }
 }
 
-export default Apply;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ signinUser }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(Apply);
