@@ -113,3 +113,40 @@ div {
       background-image: url("../assets/images/apply-splash-large.png");
       background-size: cover;
       background-position: center center; } }
+
+.application .splash-img {
+  height: 310px;
+  background-image: url("../assets/images/home-splash-small.png");
+  background-size: cover;
+  background-position: center center; }
+  @media only screen and (min-width: 601px) {
+    .application .splash-img {
+      height: 420px;
+      background-image: url("../assets/images/home-splash-large.png");
+      background-size: cover;
+      background-position: center center; } }
+
+.application .job-info {
+  width: 93%;
+  margin: auto; }
+  .application .job-info h1 {
+    margin-top: 20px;
+    margin-bottom: 30px; }
+
+.application .a-view {
+  width: 91%;
+  margin: auto;
+  margin-bottom: 40px; }
+  .application .a-view form {
+    margin-top: 20px; }
+    .application .a-view form input {
+      font-family: Montserrat; }
+  .application .a-view button {
+    border: 1px solid #363434;
+    border-radius: 5pt;
+    color: #363434;
+    font-family: Montserrat;
+    padding: 15px 20px 15px 20px;
+    margin-top: 30px;
+    width: 130px;
+    cursor: pointer; }

@@ -1,5 +1,4 @@
 import * as types from './actionTypes';
-import { browserHistory } from 'react-router';
 import { get, post } from '../../utils/fetch';
 import { setAuthToken } from '../../utils/auth';
 import { actions as flareActions } from '../global/flare';
@@ -27,12 +26,13 @@ const signinUserFailure = () => {
   };
 };
 
-export const signupUser = values => {
+export const signupUser = user => {
 	return async dispatch => {
 		try {
-			const { token } = await post('/api/signup', {...values});
+			const { token } = await post('/api/signup', user);
 			setAuthToken(token);
-			dispatch(signupUserSuccess());
+      dispatch(signupUserSuccess());
+      return true;
 		} catch (e) {
       const { error } = e;
       dispatch(flareActions.clearFlareMessage());
@@ -48,6 +48,7 @@ export const signinUser = user => {
       const { token } = await post('/api/signin', user);
       setAuthToken(token);
       dispatch(signinUserSuccess());
+      return true;
     } catch (e) {
       const { error } = e;
       dispatch(flareActions.clearFlareMessage());

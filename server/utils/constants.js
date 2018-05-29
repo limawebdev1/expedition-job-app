@@ -1,2 +1,5 @@
-export const JWT = 'jwt';
-export const AUTHENTICATION_HEADERS = 'expedition-auth-jwt';
+const AUTHENTICATION = 'expedition-auth-jwt';
+
+module.exports = {
+  AUTHENTICATION
+}

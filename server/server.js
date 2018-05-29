@@ -9,6 +9,7 @@ const environment = process.env.NODE_ENV;
 
 // Routes
 const authRoutes = require('./routes/authentication');
+const applicationRoutes = require('./routes/applications');
 
 app.use(cors());
 app.use(bodyParser.json({
@@ -16,6 +17,7 @@ app.use(bodyParser.json({
 }));
 
 app.use('/api', authRoutes);
+app.use('/api/applications', applicationRoutes);
 
 // Interal server error handler
 app.use(function (err, req, res) {

@@ -35,8 +35,18 @@ class Apply extends Component {
     </div>);
   }
 
+  signinUser = async (user) => {
+    await this.props.signinUser(user);
+    this.props.history.push('/application');
+  }
+
+  signupUser = async (user) => {
+    await this.props.signupUser(user);
+    this.props.history.push('/application');
+  }
+
   renderView = () => {
-    const { signinUser, signupUser } = this.props;
+    const { signinUser, signupUser } = this;
     switch(this.state.view){
       case 'apply': return this.renderApply(); break;
       case 'signin' : return <SigninForm onSubmit={signinUser} />; break;

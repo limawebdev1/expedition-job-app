@@ -1,5 +1,5 @@
 const authUtils = require('../utils/authUtils');
-const {  AUTHENTICATION } = require('../utils/constants');
+const { AUTHENTICATION } = require('../utils/constants');
 const Users = require('../models/users');
 
 const requireAuthedJwt = (req, res, next) => {

@@ -35,3 +35,7 @@ div {
   background-size: cover;
   background-position: center center;
 }
+
+.application {
+  @import './application';
+}
