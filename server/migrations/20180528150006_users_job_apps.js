@@ -2,7 +2,7 @@ exports.up = function (knex, Promise) {
   return Promise.all([
     knex.schema.createTable('users_job_apps', function (table) {
       table.uuid('id').primary();
-      table.uuid('user_id').notNullable().references('users.id');
+      table.uuid('user_id').notNullable().references('users.id').unique();
       table.boolean('variant_A');
       table.boolean('variant_B');
       table.integer('yrs_total');
