@@ -24,7 +24,7 @@ class Application extends Component {
     const view = application_view !== null ? (Math.random < 0.5 ? 'A' : 'B') : application_view;
     localStorage.setItem('application_view', view);
     this.state = {
-      view: 'A',
+      view: 'B',
       complete: false
     };
   }
