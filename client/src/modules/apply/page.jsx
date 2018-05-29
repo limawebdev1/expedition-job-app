@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { userIsLoggedIn } from '../../utils/auth';
 import { signinUser, signupUser } from './actions';
 import SigninForm from './components/SigninForm';
 import SignupForm from './components/SignupForm';
@@ -52,6 +53,10 @@ class Apply extends Component {
       case 'signin' : return <SigninForm onSubmit={signinUser} />; break;
       case 'signup': return <SignupForm onSubmit={signupUser} />; break;
     }
+  }
+
+  componentWillMount() {
+    userIsLoggedIn() ? this.props.history.push('/application') : null;
   }
 
   render() {

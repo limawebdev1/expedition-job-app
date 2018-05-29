@@ -7,6 +7,11 @@ const createApplication = async values => {
   return await db(TABLES.USERS_JOB_APPS).insert(appData).returning('*');
 };
 
+const findApplication = async values => {
+  return db(TABLES.USERS_JOB_APPS).select('*').where(values).first();
+};
+
 module.exports = {
-  createApplication
+  createApplication,
+  findApplication
 };

@@ -22,10 +22,7 @@ app.use('/api/applications', applicationRoutes);
 // Interal server error handler
 app.use(function (err, req, res) {
   res.statusCode = (err.status || 500);
-  res.send({
-    status: err.status,
-    message: err.message
-  });
+  res.status(err.status).json({message: err.message});
 });
 
 // Server Setup

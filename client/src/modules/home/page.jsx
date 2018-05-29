@@ -41,9 +41,13 @@ class Home extends Component {
     })
   }
 
+  componentWillMount = () => {
+    localStorage.clear();
+  }
+
   render() {
     return (<div className="home">
-      <Nav />
+      <Nav history={this.props.history}/>
       <div className="row splash-img">
       </div>
       <div className="row job-info">

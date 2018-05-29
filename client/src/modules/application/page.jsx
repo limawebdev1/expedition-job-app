@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { submitExperience } from './actions';
+import FetchData from '../../hoc/FetchData';
+import { createStructuredSelector } from 'reselect';
+import { getAll, getUserApplication } from './selectors';
+import { fetchUserApplication, submitExperience } from './actions';
 
 import Nav from '../global/Nav';
 import AView from './components/AView';
@@ -25,7 +28,8 @@ class Application extends Component {
     localStorage.setItem('application_view', view);
     this.state = {
       view: view,
-      complete: false }
+      complete: false
+    }
   }
 
   submitExperience = async (experience) => {
@@ -63,7 +67,7 @@ class Application extends Component {
 
   render() {
     return <div className="application">
-      <Nav />
+      <Nav history={this.props.history}/>
       <div className="row splash-img">
       </div>
       {this.state.complete ? this.renderComplete() : this.renderJobInfo()}
@@ -71,8 +75,18 @@ class Application extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ submitExperience }, dispatch);
-}
+const mapStateToProps = createStructuredSelector({
+  entity: getAll,
+  user_app: getUserApplication,
+});
 
-export default connect(null, mapDispatchToProps)(Application);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({
+    fetchUserApplication, 
+    submitExperience
+  }, dispatch);
+};
+
+const WrappedPage = FetchData(props => props.fetchUserApplication())(Application);
+
+export default connect(mapStateToProps, mapDispatchToProps)(WrappedPage);

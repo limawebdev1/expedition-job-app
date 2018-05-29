@@ -1,6 +1,45 @@
 import * as types from './actionTypes';
-import { get, post } from '../../utils/fetch';
+import { get, post, shouldFetch } from '../../utils/fetch';
 import { actions as flareActions } from '../global/flare';
+import { getAll } from './selectors';
+
+export const setUserAppStale = () => {
+  return {
+    type: types.SET_USER_APP_STALE,
+    payload: {
+      isStale: true
+    }
+  };
+};
+
+export const fetchUserAppRequest = () => {
+  return {
+    type: types.FETCH_USER_APP_REQUEST,
+    payload: {
+      isFetching: true,
+      isStale: false,
+    }
+  };
+};
+
+export const fetchUserAppSuccess = value => {
+  return {
+    type: types.FETCH_USER_APP_SUCCESS,
+    payload: {
+      isFetching: false,
+      value,
+    }
+  };
+};
+
+export const fetchUserAppFailure = () => {
+  return {
+    type: types.FETCH_USER_APP_FAILURE,
+    payload: {
+      isFetching: false,
+    }
+  };
+};
 
 const submitExperienceSuccess = () => {
   return {
@@ -28,4 +67,20 @@ export const submitExperience = experience => {
 			dispatch(submitExperienceFailure());
 		}
 	};
+};
+
+export const fetchUserApplication = () => {
+  return async (dispatch, getState) => {
+    const userAppEntity = getAll(getState());
+    if (!shouldFetch(userAppEntity)) {
+      return;
+    }
+    dispatch(fetchUserAppRequest());
+    try {
+      const userApp = await get('/api/applications');
+      dispatch(fetchUserAppSuccess(userApp));
+    } catch (e) {
+      dispatch(fetchUserAppFailure());
+    }
+  };
 };

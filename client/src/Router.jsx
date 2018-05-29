@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import App from './App';
 import Home from './modules/home/page.jsx';
 import Apply from './modules/apply/page.jsx';
-import Application from './modules/application/page.jsx';
+import {Page as Application} from './modules/application';
 
 const RouterComponent = () => {
   return (<Router>
