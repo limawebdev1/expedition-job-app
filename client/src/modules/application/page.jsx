@@ -24,9 +24,8 @@ class Application extends Component {
     const view = application_view !== null ? (Math.random < 0.5 ? 'A' : 'B') : application_view;
     localStorage.setItem('application_view', view);
     this.state = {
-      view: 'B',
-      complete: false
-    };
+      view: view,
+      complete: false }
   }
 
   submitExperience = async (experience) => {
@@ -37,20 +36,37 @@ class Application extends Component {
     })
   }
 
+  renderJobInfo = () => {
+    return (
+      <div>
+        <div className="row job-info">
+          <div className="col s12">
+            <h1>{job.title}</h1>
+            <h2>Description</h2>
+            <p>{job.description}</p>
+            <p>Please fill out the information below and we will be in touch with you. Thank you! </p>
+          </div>
+        </div>
+        {this.state.view === 'A' ? <AView onSubmit={this.submitExperience} /> : <BView onSubmit={this.submitExperience} />}
+      </div>
+    );
+  }
+
+  renderComplete = () => {
+    return (
+      <div className="row complete">
+        <h1>Thank you for your interest in this position. We will get back to you shortly!</h1>
+        <button>Sign out</button>
+      </div>
+    )
+  }
+
   render() {
     return <div className="application">
       <Nav />
       <div className="row splash-img">
       </div>
-      <div className="row job-info">
-        <div className="col s12">
-          <h1>{job.title}</h1>
-          <h2>Description</h2>
-          <p>{job.description}</p>
-          <p>Please fill out the information below and we will be in touch with you. Thank you! </p>
-        </div>
-      </div>
-      {this.state.view === 'A' ? <AView onSubmit={this.submitExperience}/> : <BView onSubmit={this.submitExperience}/>}
+      {this.state.complete ? this.renderComplete() : this.renderJobInfo()}
     </div>;
   }
 }

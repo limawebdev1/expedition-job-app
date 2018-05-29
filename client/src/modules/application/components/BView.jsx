@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
+
 import Slider from 'material-ui/Slider';
-// import { requiredFields } from '../../../utils/validation';
 import TextInput from '../../global/TextInput';
 
 class BView extends Component {
@@ -94,4 +93,4 @@ class BView extends Component {
   }
 }
 
-export default reduxForm({ form: 'experience' })(BView);
+export default BView;

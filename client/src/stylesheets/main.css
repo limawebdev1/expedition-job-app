@@ -133,6 +133,23 @@ div {
     margin-top: 20px;
     margin-bottom: 30px; }
 
+.application .complete {
+  width: 93%;
+  text-align: center; }
+  .application .complete h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px; }
+  .application .complete button {
+    border: 1px solid #363434;
+    border-radius: 5pt;
+    color: #363434;
+    font-family: Montserrat;
+    padding: 15px 20px 15px 20px;
+    width: 130px;
+    cursor: pointer; }
+
 .application .a-view {
   width: 91%;
   margin: auto;
@@ -158,6 +175,8 @@ div {
   .application .b-view .col {
     padding-left: 20px;
     padding-right: 20px; }
+    .application .b-view .col p span {
+      color: #00bcd4; }
   .application .b-view button {
     border: 1px solid #363434;
     border-radius: 5pt;
